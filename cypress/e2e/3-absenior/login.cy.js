@@ -112,8 +112,8 @@ context('Login', () => {
 
     it('Deve realizar o login corretamente', () => {
         cy.get('button').contains('Entrar').click();
-        cy.get('#email').type('usuarioteste.absenior@outlook.com');
-        cy.get('#password').type('teste@1234');
+        cy.get('#email').type(Cypress.env('email'));
+        cy.get('#password').type(Cypress.env('senha'));
         cy.get('button').contains('Confirmar').click();
 
         cy.location('pathname').should('include', 'home');
@@ -121,8 +121,8 @@ context('Login', () => {
 
     it('Deve deslogar caso o usuário deseje', () => {
         cy.get('button').contains('Entrar').click();
-        cy.get('#email').type('usuarioteste.absenior@outlook.com');
-        cy.get('#password').type('teste@1234');
+        cy.get('#email').type(Cypress.env('email'));
+        cy.get('#password').type(Cypress.env('senha'));
         cy.get('button').contains('Confirmar').click();
 
         cy.get('#Sair').click();
@@ -134,8 +134,8 @@ context('Login', () => {
 
     it('Deve permanecer logado caso o usuário deseje', () => {
         cy.get('button').contains('Entrar').click();
-        cy.get('#email').type('usuarioteste.absenior@outlook.com');
-        cy.get('#password').type('teste@1234');
+        cy.get('#email').type(Cypress.env('email'));
+        cy.get('#password').type(Cypress.env('senha'));
         cy.get('button').contains('Confirmar').click();
 
         cy.get('#Sair').click();
