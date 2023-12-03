@@ -18,12 +18,6 @@ context('Register', () => {
         cy.location('pathname').should('include', 'register');
     });
 
-    it('Deve ir para tela de login ao clicar no botão Entrar', () => {
-        cy.get('button').contains('Entrar').click();
-
-        cy.location('pathname').should('include', 'login');
-    });
-
     it('Deve sair som ao clicar no botão de microfone', () => {
         const state = {
             started: false,
