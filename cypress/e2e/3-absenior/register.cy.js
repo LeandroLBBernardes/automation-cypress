@@ -96,17 +96,12 @@ context('Register', () => {
     it('Deve realizar o cadastro corretamente', () => {
         cy.get('button').contains('Cadastrar').click();
         cy.get('#name').type('Teste');
-        cy.get('#email').type('teste.12345@gmail.com');
+        cy.get('#email').type('teste1@outlook.com');
         cy.get('#password').type('123456');
 
         cy.intercept('POST', '**/signup', { 
             statusCode: 200,
             body: {
-                access_token: "eyJhbGciOiJIUzI1NiIsImtpZCI6IitxbTJ3akpoS0RhVHAxRjQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzAxNjIxODg0LCJpYXQiOjE3MDE2MTgyODQsImlzcyI6Imh0dHBzOi8vdGd4YW93c29kampudXlxYXN3ZHAuc3VwYWJhc2UuY28vYXV0aC92MSIsInN1YiI6IjFiYmY1NDRjLThmNTgtNDI1MC1hMjQ3LTc1MTI4ZWZmYWM4OCIsImVtYWlsIjoidGVzdGUxQG91dGxvb2suY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6e30sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3MDE2MTgyODR9XSwic2Vzc2lvbl9pZCI6IjljM2NlNTNhLWM3MjEtNGViOC1hMWViLTU0NzEzODVkNjI5MSJ9.iP1FO2q-COpDXugLSF8jmBZsmgKeeZWRm-A6bHKb4I0",
-                token_type: "bearer",
-                expires_in: 3600,
-                expires_at: 1701621884,
-                refresh_token: "Z_xDUriF7pSUM4BD5Y5myw",
                 user: {
                     id: "1bbf544c-8f58-4250-a247-75128effac88",
                     aud: "authenticated",
