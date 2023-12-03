@@ -143,5 +143,5 @@ context('Login', () => {
         cy.get('#swal2-title').should('have.text','Você tem certeza disso?');
         cy.get('button').contains('Não, não quero deslogar!').click();
         cy.location('pathname').should('include', 'home');
-    })
+    });
 });
